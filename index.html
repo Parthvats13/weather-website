@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .weather-card {
+            background: linear-gradient(135deg, #00b4db, #0083b0);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .weather-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .temperature {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .weather-description {
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Weather Forecast</h1>
+        <div class="row" id="weather-container">
+            <!-- Weather cards will be inserted here -->
+        </div>
+    </div>
+
+    <script>
+        async function fetchWeatherData() {
+            try {
+                const response = await fetch('http://127.0.0.1:5000/api/weather');
+                const data = await response.json();
+                displayWeather(data);
+            } catch (error) {
+                console.error('Error fetching weather data:', error);
+            }
+        }
+
+        function displayWeather(data) {
+            const container = document.getElementById('weather-container');
+            container.innerHTML = '';
+
+            data.list.forEach(forecast => {
+                const date = new Date(forecast.dt * 1000);
+                const temp = Math.round(forecast.main.temp - 273.15); // Convert Kelvin to Celsius
+                const weather = forecast.weather[0];
+                
+                const card = document.createElement('div');
+                card.className = 'col-md-3';
+                card.innerHTML = `
+                    <div class="weather-card">
+                        <div class="text-center">
+                            <div class="weather-icon">
+                                <img src="http://openweathermap.org/img/wn/${weather.icon}@2x.png" alt="${weather.description}">
+                            </div>
+                            <div class="temperature">${temp}°C</div>
+                            <div class="weather-description">${weather.description}</div>
+                            <div class="date">${date.toLocaleDateString()}</div>
+                            <div class="time">${date.toLocaleTimeString()}</div>
+                            <div class="details mt-3">
+                                <small>Humidity: ${forecast.main.humidity}%</small><br>
+                                <small>Wind: ${forecast.wind.speed} m/s</small>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Fetch weather data when page loads
+        fetchWeatherData();
+        
+        // Refresh data every 5 minutes
+        setInterval(fetchWeatherData, 300000);
+    </script>
+</body>
+</html> 

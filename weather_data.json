@@ -1,0 +1,170 @@
+{
+    "cod": "200",
+    "message": 0,
+    "cnt": 4,
+    "list": [
+        {
+            "dt": 1744794000,
+            "main": {
+                "temp": 283.75,
+                "feels_like": 282.69,
+                "temp_min": 283.75,
+                "temp_max": 284.35,
+                "pressure": 1019,
+                "sea_level": 1019,
+                "grnd_level": 1003,
+                "humidity": 70,
+                "temp_kf": -0.6
+            },
+            "weather": [
+                {
+                    "id": 804,
+                    "main": "Clouds",
+                    "description": "overcast clouds",
+                    "icon": "04d"
+                }
+            ],
+            "clouds": {
+                "all": 100
+            },
+            "wind": {
+                "speed": 5.26,
+                "deg": 144,
+                "gust": 10.67
+            },
+            "visibility": 10000,
+            "pop": 0,
+            "sys": {
+                "pod": "d"
+            },
+            "dt_txt": "2025-04-16 09:00:00"
+        },
+        {
+            "dt": 1744804800,
+            "main": {
+                "temp": 282.84,
+                "feels_like": 280.36,
+                "temp_min": 282.54,
+                "temp_max": 282.84,
+                "pressure": 1019,
+                "sea_level": 1019,
+                "grnd_level": 1003,
+                "humidity": 82,
+                "temp_kf": 0.3
+            },
+            "weather": [
+                {
+                    "id": 500,
+                    "main": "Rain",
+                    "description": "light rain",
+                    "icon": "10d"
+                }
+            ],
+            "clouds": {
+                "all": 100
+            },
+            "wind": {
+                "speed": 4.98,
+                "deg": 142,
+                "gust": 11.59
+            },
+            "visibility": 10000,
+            "pop": 1,
+            "rain": {
+                "3h": 2.15
+            },
+            "sys": {
+                "pod": "d"
+            },
+            "dt_txt": "2025-04-16 12:00:00"
+        },
+        {
+            "dt": 1744815600,
+            "main": {
+                "temp": 282.74,
+                "feels_like": 280.32,
+                "temp_min": 282.74,
+                "temp_max": 282.74,
+                "pressure": 1019,
+                "sea_level": 1019,
+                "grnd_level": 1003,
+                "humidity": 88,
+                "temp_kf": 0
+            },
+            "weather": [
+                {
+                    "id": 500,
+                    "main": "Rain",
+                    "description": "light rain",
+                    "icon": "10d"
+                }
+            ],
+            "clouds": {
+                "all": 100
+            },
+            "wind": {
+                "speed": 4.76,
+                "deg": 147,
+                "gust": 11.63
+            },
+            "visibility": 10000,
+            "pop": 0.66,
+            "rain": {
+                "3h": 0.31
+            },
+            "sys": {
+                "pod": "d"
+            },
+            "dt_txt": "2025-04-16 15:00:00"
+        },
+        {
+            "dt": 1744826400,
+            "main": {
+                "temp": 282.99,
+                "feels_like": 280.81,
+                "temp_min": 282.99,
+                "temp_max": 282.99,
+                "pressure": 1019,
+                "sea_level": 1019,
+                "grnd_level": 1003,
+                "humidity": 90,
+                "temp_kf": 0
+            },
+            "weather": [
+                {
+                    "id": 804,
+                    "main": "Clouds",
+                    "description": "overcast clouds",
+                    "icon": "04n"
+                }
+            ],
+            "clouds": {
+                "all": 100
+            },
+            "wind": {
+                "speed": 4.32,
+                "deg": 149,
+                "gust": 10.9
+            },
+            "visibility": 10000,
+            "pop": 0.35,
+            "sys": {
+                "pod": "n"
+            },
+            "dt_txt": "2025-04-16 18:00:00"
+        }
+    ],
+    "city": {
+        "id": 455102,
+        "name": "Subate",
+        "coord": {
+            "lat": 56,
+            "lon": 26
+        },
+        "country": "LV",
+        "population": 0,
+        "timezone": 10800,
+        "sunrise": 1744772859,
+        "sunset": 1744824210
+    }
+}
